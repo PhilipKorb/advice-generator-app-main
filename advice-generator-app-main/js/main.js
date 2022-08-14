@@ -7,7 +7,7 @@ var diceBtn = document.getElementsByClassName('.dice__bg');
 
 //api request function
 function getAdvice() {
-  fetch('https://api.adviceslip.com/advice').then(function(response) {
+  fetch('https://api.adviceslip.com/advice', { cache: 'no-cache' }).then(function(response) {
   return response.json();
 }).then(function(data) {
   idAdvice[0].innerText = ` ADVICE # ${data.slip.id}`;
